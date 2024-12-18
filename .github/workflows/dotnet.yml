@@ -28,3 +28,5 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish project
       run: dotnet publish --configuration Release --output ./published
+    - name: shot folder
+      run : ls -la
