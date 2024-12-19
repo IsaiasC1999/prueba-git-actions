@@ -30,3 +30,17 @@ jobs:
       run: dotnet publish --configuration Release --output ./published
     - name: shot folder
       run : ls -la
+    
+  conecction-ssh:
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: 172.20.255.15
+        username: desarrollo
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+        whoami
+        ls -al
+        mkdir /home/desarrollo carpeta-git-acction
