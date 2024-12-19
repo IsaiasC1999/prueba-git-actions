@@ -10,30 +10,30 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  # build:
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    - name: Publish project
-      run: dotnet publish --configuration Release --output ./published
-    - name: shot folder
-      run : ls -la
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Setup .NET
+  #     uses: actions/setup-dotnet@v4
+  #     with:
+  #       dotnet-version: 8.0.x
+  #   - name: Restore dependencies
+  #     run: dotnet restore
+  #   - name: Build
+  #     run: dotnet build --no-restore
+  #   - name: Test
+  #     run: dotnet test --no-build --verbosity normal
+  #   - name: Publish project
+  #     run: dotnet publish --configuration Release --output ./published
+  #   - name: shot folder
+  #     run : ls -la
     
   conecction-ssh:
     runs-on: ubuntu-latest
-     
+
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v1.2.0
@@ -45,4 +45,4 @@ jobs:
         script: |
           whoami
           ls -al
-          mkdir /home/desarrollo carpeta-git-acction
+          
