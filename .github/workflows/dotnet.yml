@@ -41,6 +41,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-        whoami
-        ls -al
-        mkdir /home/desarrollo carpeta-git-acction
+          whoami
+          ls -al
+          mkdir /home/desarrollo carpeta-git-acction
