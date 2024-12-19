@@ -32,6 +32,8 @@ jobs:
       run : ls -la
     
   conecction-ssh:
+    runs-on: ubuntu-latest
+     
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v1.2.0
